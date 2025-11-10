@@ -262,9 +262,16 @@ const (
 )
 
 type VirtualMachineGPU struct {
-	Assignment      *Assignment `json:"assignment,omitempty"`
-	PartitionSizeMB *uint64     `json:"partitionSizeMB,omitempty"`
-	Name            *string     `json:"name,omitempty"`
+	Assignment      *Assignment             `json:"assignment,omitempty"`
+	PartitionSizeMB *uint64                 `json:"partitionSizeMB,omitempty"`
+	Name            *string                 `json:"name,omitempty"`
+	GpuDriver       *string                 `json:"gpuDriver,omitempty"`
+	MMIORegion      GpuMemoryMappedIORegion `json:"mmioRegion,omitempty"`
+}
+
+type GpuMemoryMappedIORegion struct {
+	Low  int `json:"low,omitempty"`
+	High int `json:"high,omitempty"`
 }
 
 type HardwareProfile struct {
