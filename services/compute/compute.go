@@ -270,8 +270,8 @@ type VirtualMachineGPU struct {
 }
 
 type GpuMemoryMappedIORegion struct {
-	Low  int `json:"low,omitempty"`
-	High int `json:"high,omitempty"`
+	Low  *uint64 `json:"low,omitempty"`
+	High *uint64 `json:"high,omitempty"`
 }
 
 type HardwareProfile struct {
